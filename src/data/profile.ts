@@ -49,8 +49,8 @@ export const profile = {
   // Shows in the terminal panel on About.
   status: "Final-year student, Taylor's University",
 
-  // TODO: your contact email. It powers the large link and the form on Contact.
-  email: 'TODO@example.com',
+  // Powers the large link and the form on Contact.
+  email: 'romeocheah22@gmail.com',
 
   // Optional. Paste a Formspree endpoint here, such as 'https://formspree.io/f/abc123', to have
   // the contact form send messages directly. While it is empty, the form opens the visitor's
