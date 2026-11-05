@@ -256,6 +256,33 @@
     }
   }
 
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-neon-cyan);
+  }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    min-height: 3rem;
+    border: 2px solid var(--color-muted);
+    background: var(--color-night-raised);
+    padding: 0.625rem 0.875rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-ink);
+    transition: border-color 120ms linear;
+  }
+
+  .field input:hover,
+  .field textarea:hover {
+    border-color: var(--color-neon-yellow);
+  }
+
   .status-caret {
     animation: status-caret-blink 1s steps(1) infinite;
   }
