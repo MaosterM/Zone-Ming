@@ -9,6 +9,9 @@ import { usePageTitle } from '../lib/routes'
 
 const CURSOR_GAP = 28
 const EDGE_GAP = 16
+const TILT_LIMIT = 18
+const TILT_PER_PIXEL = 1.1
+const TILT_PERSPECTIVE = 900
 
 export default function Work() {
   usePageTitle('Work')
@@ -18,6 +21,7 @@ export default function Work() {
   const moveX = useRef<gsap.QuickToFunc | null>(null)
   const moveY = useRef<gsap.QuickToFunc | null>(null)
   const showing = useRef(false)
+  const levelOut = useRef<gsap.core.Tween | null>(null)
   const finePointer = useHasFinePointer()
   const reducedMotion = usePrefersReducedMotion()
 
@@ -90,7 +94,21 @@ export default function Work() {
   }
 
   function onRowMove(event: PointerEvent) {
-    if (showing.current) placePreview(event.clientX, event.clientY)
+    if (!showing.current) return
+    placePreview(event.clientX, event.clientY)
+    if (reducedMotion) return
+
+    // The card tilts in 3D with the pointer's speed, and levels out when it stops.
+    gsap.to(preview.current, {
+      rotationY: gsap.utils.clamp(-TILT_LIMIT, TILT_LIMIT, event.movementX * TILT_PER_PIXEL),
+      rotationX: gsap.utils.clamp(-TILT_LIMIT, TILT_LIMIT, -event.movementY * TILT_PER_PIXEL),
+      transformPerspective: TILT_PERSPECTIVE,
+      duration: 0.3,
+      ease: 'power3.out',
+      overwrite: 'auto',
+    })
+    levelOut.current?.kill()
+    levelOut.current = gsap.to(preview.current, { rotationX: 0, rotationY: 0, duration: 0.7, delay: 0.12, ease: 'power3.out' })
   }
 
   return (
