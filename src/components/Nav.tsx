@@ -133,7 +133,7 @@ export default function Nav() {
       <div className="relative z-10 flex items-center justify-between px-6 py-4 md:px-12">
         <Link
           to="/"
-          aria-label="Cheah Yi Ming, home"
+          aria-label="CYM, Cheah Yi Ming, home"
           className="clip-slant bg-neon-yellow px-5 py-2 font-display text-2xl leading-none font-black tracking-wide text-night transition-colors hover:bg-neon-cyan"
         >
           CYM
