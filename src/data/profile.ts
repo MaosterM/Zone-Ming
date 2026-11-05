@@ -45,15 +45,23 @@ export const profile = {
   // TODO: your short bio. Each string renders as its own paragraph on About.
   bio: ['TODO: add your short bio'],
 
+  // TODO: your current status, one line. It shows in the terminal panel on About.
+  status: 'TODO: add your status',
+
   // TODO: your contact email. It powers the large link and the form on Contact.
   email: 'TODO@example.com',
+
+  // Optional. Paste a Formspree endpoint here, such as 'https://formspree.io/f/abc123', to have
+  // the contact form send messages directly. While it is empty, the form opens the visitor's
+  // email app addressed to the email above.
+  formspreeEndpoint: '',
 }
 
 // TODO: list your skills in each group.
 export const skills: SkillGroup[] = [
-  { name: 'Build', items: [] },
-  { name: 'Motion', items: [] },
-  { name: 'Tools', items: [] },
+  { name: 'Build', items: ['TODO: add your build skills'] },
+  { name: 'Motion', items: ['TODO: add your motion skills'] },
+  { name: 'Tools', items: ['TODO: add your tools'] },
 ]
 
 // TODO: add 3 to 6 projects. Copy this shape for each one:
