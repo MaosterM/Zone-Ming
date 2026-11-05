@@ -18,7 +18,6 @@ export function useSmoothScroll() {
 
     lenis = new Lenis()
     gsap.ticker.add(raf)
-    gsap.ticker.lagSmoothing(0)
 
     return () => {
       gsap.ticker.remove(raf)
