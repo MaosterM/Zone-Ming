@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
+import Background from './components/Background'
 import Nav from './components/Nav'
 import { useSmoothScroll } from './lib/smoothScroll'
 import About from './pages/About'
@@ -13,6 +14,7 @@ export default function App() {
 
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <Background />
       <Nav />
       <main id="main" tabIndex={-1} className="relative z-10">
         <Routes>

@@ -49,6 +49,25 @@
   }
 }
 
+@layer components {
+  .scanlines {
+    background: repeating-linear-gradient(0deg, rgb(0 0 0 / 0.1) 0 1px, transparent 1px 3px);
+  }
+
+  .glitch-slice {
+    background: linear-gradient(90deg, rgb(0 240 255 / 0.22), rgb(255 31 143 / 0.22));
+    backdrop-filter: hue-rotate(70deg) saturate(1.6);
+    mix-blend-mode: screen;
+  }
+
+  /* text-shadow inherits, so this splits all the text on the page during a flicker. */
+  .is-glitching {
+    text-shadow:
+      2px 0 rgb(0 240 255 / 0.75),
+      -2px 0 rgb(255 31 143 / 0.75);
+  }
+}
+
 /* Parallelogram shape shared by the logo tile, buttons and the nav indicator. */
 @utility clip-slant {
   --slant: 0.7rem;
