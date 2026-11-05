@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07060d" />
+    <meta name="description" content="Portfolio of Cheah Yi Ming." />
+    <title>Cheah Yi Ming</title>
+    <style>
+      html { background: #07060d; }
+    </style>
+    <script>
+      // Restores a deep link that public/404.html passed along as a query.
+      ;(function (l) {
+        if (l.search[1] !== '/') return
+        var path = l.search.slice(1).split('&').map(function (part) {
+          return part.replace(/~and~/g, '&')
+        }).join('?')
+        window.history.replaceState(null, '', l.pathname.slice(0, -1) + path + l.hash)
+      })(window.location)
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
