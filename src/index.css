@@ -60,6 +60,16 @@
     mix-blend-mode: screen;
   }
 
+  .glitch-layer {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    text-shadow: none;
+  }
+
   /* text-shadow inherits, so this splits all the text on the page during a flicker. */
   .is-glitching {
     text-shadow:
