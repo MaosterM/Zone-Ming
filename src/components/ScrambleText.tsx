@@ -13,6 +13,8 @@ type Props = {
   as?: ElementType
   /** 'view' plays once on entering the viewport, 'hover' on hover or keyboard focus. */
   on?: 'view' | 'hover'
+  /** Lets the scrambling copy wrap, for text that can run over several lines. */
+  multiline?: boolean
   className?: string
 }
 
@@ -24,7 +26,7 @@ function randomGlyph() {
  * Decode effect: random glyphs settle into the text from left to right. The real text stays
  * in the DOM, only made transparent while an aria-hidden copy does the scrambling.
  */
-export default function ScrambleText({ text, as: Tag = 'span', on = 'view', className = '' }: Props) {
+export default function ScrambleText({ text, as: Tag = 'span', on = 'view', multiline = false, className = '' }: Props) {
   const root = useRef<HTMLElement>(null)
   const real = useRef<HTMLSpanElement>(null)
   const overlay = useRef<HTMLSpanElement>(null)
@@ -100,7 +102,7 @@ export default function ScrambleText({ text, as: Tag = 'span', on = 'view', clas
       <span
         ref={overlay}
         aria-hidden
-        className="pointer-events-none absolute inset-0 hidden overflow-hidden whitespace-nowrap select-none"
+        className={`pointer-events-none absolute inset-0 hidden overflow-hidden select-none ${multiline ? '' : 'whitespace-nowrap'}`}
       />
     </Tag>
   )
