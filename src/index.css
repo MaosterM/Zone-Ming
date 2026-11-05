@@ -47,6 +47,12 @@
   main:focus {
     outline: none;
   }
+
+  /* Set by Cursor.tsx, so the normal cursor stays if that script never runs. */
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: none !important;
+  }
 }
 
 @layer components {
