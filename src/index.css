@@ -53,6 +53,16 @@
   .has-custom-cursor * {
     cursor: none !important;
   }
+
+  /* Covers every CSS transition and animation, on top of the checks in the GSAP code. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation: none !important;
+    }
+  }
 }
 
 @layer components {
@@ -148,7 +158,6 @@
     position: absolute;
     inset: 0;
     visibility: hidden;
-    white-space: nowrap;
     pointer-events: none;
     user-select: none;
     text-shadow: none;
@@ -173,10 +182,4 @@
 @utility clip-slant {
   --slant: 0.7rem;
   clip-path: polygon(var(--slant) 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
-}
-
-/* Big Shoulders has no italic cut, so the slanted display style is a real skew. */
-@utility display-italic {
-  display: inline-block;
-  transform: skewX(-12deg);
 }
