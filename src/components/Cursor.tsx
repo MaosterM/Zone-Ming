@@ -1,22 +1,11 @@
-import { useRef, useSyncExternalStore } from 'react'
-import { gsap, useGSAP, usePrefersReducedMotion } from '../lib/motion'
+import { useRef } from 'react'
+import { gsap, useGSAP, useHasFinePointer, usePrefersReducedMotion } from '../lib/motion'
 
-const FINE_POINTER_QUERY = '(hover: hover) and (pointer: fine)'
 const INTERACTIVE = 'a, button, input, textarea, select, label, [role="button"]'
-
-function subscribeToPointer(onChange: () => void) {
-  const query = window.matchMedia(FINE_POINTER_QUERY)
-  query.addEventListener('change', onChange)
-  return () => query.removeEventListener('change', onChange)
-}
-
-function hasFinePointer() {
-  return window.matchMedia(FINE_POINTER_QUERY).matches
-}
 
 /** Neon crosshair with a trailing slanted block. Touch devices keep their normal behaviour. */
 export default function Cursor() {
-  const finePointer = useSyncExternalStore(subscribeToPointer, hasFinePointer)
+  const finePointer = useHasFinePointer()
   const reducedMotion = usePrefersReducedMotion()
   const crosshair = useRef<HTMLDivElement>(null)
   const block = useRef<HTMLDivElement>(null)
