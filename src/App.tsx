@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Background from './components/Background'
 import Nav from './components/Nav'
+import PageTransition from './components/PageTransition'
 import { useSmoothScroll } from './lib/smoothScroll'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -16,16 +17,20 @@ export default function App() {
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Background />
       <Nav />
-      <main id="main" tabIndex={-1} className="relative z-10">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/work/:slug" element={<ProjectDetail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
+      <PageTransition>
+        {(location) => (
+          <main id="main" tabIndex={-1} className="relative z-10">
+            <Routes location={location}>
+              <Route path="/" element={<Home />} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/work/:slug" element={<ProjectDetail />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+        )}
+      </PageTransition>
     </BrowserRouter>
   )
 }
