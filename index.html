@@ -14,9 +14,15 @@
       html { background: #07060d; }
     </style>
     <script>
-      // Restores a deep link that public/404.html passed along as a query.
+      // Restores a deep link that public/404.html passed along as a query, and drops the
+      // trailing slash GitHub Pages can add, so each page has one address.
       ;(function (l) {
-        if (l.search[1] !== '/') return
+        if (l.search[1] !== '/') {
+          if (l.pathname !== '%BASE_URL%' && /[^/]\/$/.test(l.pathname)) {
+            window.history.replaceState(null, '', l.pathname.slice(0, -1) + l.search + l.hash)
+          }
+          return
+        }
         var path = l.search.slice(1).split('&').map(function (part) {
           return part.replace(/~and~/g, '&')
         }).join('?')
