@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Only the tokens below exist, so nothing drifts off the palette. */
+  --color-*: initial;
+  --color-night: #07060d;
+  --color-night-raised: #12101f;
+  --color-ink: #f4f2ea;
+  --color-muted: #aeadc2;
+  --color-line: #3a3852;
+  --color-neon-yellow: #fcee0a;
+  --color-neon-magenta: #ff1f8f;
+  --color-neon-cyan: #00f0ff;
+  --color-neon-violet: #3b2bff;
+
+  --font-display: 'Big Shoulders Display Variable', 'Arial Narrow', sans-serif;
+  --font-body: 'Archivo Variable', system-ui, sans-serif;
+  --font-mono: 'Share Tech Mono', ui-monospace, monospace;
+
+  --ease-slam: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-night);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100svh;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-neon-yellow);
+    color: var(--color-night);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-neon-cyan);
+    outline-offset: 3px;
+  }
+
+  main:focus {
+    outline: none;
+  }
+}
+
+/* Parallelogram shape shared by the logo tile, buttons and the nav indicator. */
+@utility clip-slant {
+  --slant: 0.7rem;
+  clip-path: polygon(var(--slant) 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
+}
+
+/* Big Shoulders has no italic cut, so the slanted display style is a real skew. */
+@utility display-italic {
+  display: inline-block;
+  transform: skewX(-12deg);
+}
