@@ -35,7 +35,7 @@ function ProjectBody({ index }: { index: number }) {
           alt={project.imageAlt}
           fetchPriority="high"
           decoding="async"
-          className="mt-8 aspect-video w-full object-cover object-top [clip-path:polygon(0_0,100%_0,100%_94%,0_100%)] md:aspect-[21/9]"
+          className="mt-8 aspect-video w-full max-w-6xl object-cover object-top [clip-path:polygon(0_0,100%_0,100%_97%,0_100%)]"
         />
       )}
 
