@@ -1,10 +1,12 @@
 import { profile } from '../data/profile'
 
+const YEAR = new Date().getFullYear()
+
 export default function Footer() {
   return (
     <footer className="text-halo relative z-10 flex items-center justify-between gap-4 px-6 py-1 font-mono text-sm text-muted md:px-12">
       <span>
-        &copy; {new Date().getFullYear()} {profile.name}
+        &copy; {YEAR} {profile.name}
       </span>
       <a
         href={profile.linkedin}
