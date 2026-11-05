@@ -217,6 +217,16 @@
     }
   }
 
+  /* Two lines at every width, for rows that only get half the page. */
+  .work-row.work-row-compact {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    grid-template-areas:
+      'index title'
+      'index text';
+    align-content: start;
+    gap: 0.5rem;
+  }
+
   .work-row:focus-visible {
     color: var(--color-night);
     outline-offset: -5px;

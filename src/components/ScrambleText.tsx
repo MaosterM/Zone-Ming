@@ -31,7 +31,7 @@ export default function ScrambleText({ text, as: Tag = 'span', on = 'view', mult
   const real = useRef<HTMLSpanElement>(null)
   const overlay = useRef<HTMLSpanElement>(null)
   const tween = useRef<gsap.core.Tween | null>(null)
-  const phase = useTransitionPhase()
+  const covered = useTransitionPhase() === 'covering'
 
   const { contextSafe } = useGSAP({ scope: root })
 
@@ -69,7 +69,7 @@ export default function ScrambleText({ text, as: Tag = 'span', on = 'view', mult
 
   // Waits for the wipe to finish, so a heading never decodes unseen behind the slabs.
   useEffect(() => {
-    if (on !== 'view' || phase === 'covering') return
+    if (on !== 'view' || covered) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -82,7 +82,7 @@ export default function ScrambleText({ text, as: Tag = 'span', on = 'view', mult
     observer.observe(root.current!)
     return () => observer.disconnect()
     // play is stable for this purpose: it only reads refs and the current text.
-  }, [on, phase, text])
+  }, [on, covered, text])
 
   useEffect(() => {
     if (on !== 'hover') return
