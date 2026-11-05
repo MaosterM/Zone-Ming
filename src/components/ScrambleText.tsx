@@ -58,6 +58,7 @@ export default function ScrambleText({ text, as: Tag = 'span', on = 'view', clas
           .join('')
       },
       onComplete() {
+        copy.textContent = ''
         gsap.set(copy, { display: 'none' })
         gsap.set(original, { clearProps: 'opacity' })
       },
