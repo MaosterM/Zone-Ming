@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Background from './components/Background'
+import Cursor from './components/Cursor'
 import Footer from './components/Footer'
 import Nav from './components/Nav'
 import PageTransition from './components/PageTransition'
@@ -35,6 +36,7 @@ export default function App() {
           </div>
         )}
       </PageTransition>
+      <Cursor />
     </BrowserRouter>
   )
 }
