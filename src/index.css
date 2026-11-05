@@ -256,6 +256,16 @@
     }
   }
 
+  .status-caret {
+    animation: status-caret-blink 1s steps(1) infinite;
+  }
+
+  @keyframes status-caret-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
   /* The slanted edges only trim the padding, so the letters are never cut at rest. */
   .word-mask {
     position: relative;
