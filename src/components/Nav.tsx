@@ -134,7 +134,7 @@ export default function Nav() {
         <Link
           to="/"
           aria-label="CYM, Cheah Yi Ming, home"
-          className="clip-slant bg-neon-yellow px-5 py-2 font-display text-2xl leading-none font-black tracking-wide text-night transition-colors hover:bg-neon-cyan"
+          className="logo-tile px-5 py-2.5 font-display text-2xl leading-none font-black tracking-wide text-night"
         >
           CYM
         </Link>
