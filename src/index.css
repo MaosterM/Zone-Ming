@@ -283,6 +283,12 @@
     border-color: var(--color-neon-yellow);
   }
 
+  .signal-split {
+    text-shadow:
+      0.018em 0 var(--color-neon-cyan),
+      -0.018em 0 var(--color-neon-magenta);
+  }
+
   .status-caret {
     animation: status-caret-blink 1s steps(1) infinite;
   }
