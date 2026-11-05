@@ -12,7 +12,7 @@ export default function About() {
       <section className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-16">
         <div>
           <Heading as="h1" text="About" className="text-8xl leading-none md:text-[10rem]" />
-          <div className="text-halo mt-6 flex max-w-prose flex-col gap-4 text-lg text-ink md:text-xl">
+          <div className="text-halo mt-6 flex max-w-xl flex-col gap-4 text-lg text-ink md:text-xl">
             {profile.bio.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
