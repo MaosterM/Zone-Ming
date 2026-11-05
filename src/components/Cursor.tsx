@@ -17,11 +17,15 @@ export default function Cursor() {
       const root = document.documentElement
       root.classList.add('has-custom-cursor')
 
-      const trailSeconds = reducedMotion ? 0 : 0.35
       const crosshairX = gsap.quickSetter(crosshair.current, 'x', 'px')
       const crosshairY = gsap.quickSetter(crosshair.current, 'y', 'px')
-      const blockX = gsap.quickTo(block.current, 'x', { duration: trailSeconds, ease: 'power3.out' })
-      const blockY = gsap.quickTo(block.current, 'y', { duration: trailSeconds, ease: 'power3.out' })
+      // Under reduced motion the block moves with the crosshair instead of trailing it.
+      const blockX = reducedMotion
+        ? gsap.quickSetter(block.current, 'x', 'px')
+        : gsap.quickTo(block.current, 'x', { duration: 0.35, ease: 'power3.out' })
+      const blockY = reducedMotion
+        ? gsap.quickSetter(block.current, 'y', 'px')
+        : gsap.quickTo(block.current, 'y', { duration: 0.35, ease: 'power3.out' })
       let visible = false
 
       function onMove(event: PointerEvent) {
