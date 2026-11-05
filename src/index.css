@@ -66,6 +66,84 @@
     mix-blend-mode: screen;
   }
 
+  /* The slanted shape sits on a pseudo-element, so the outline variant keeps its border. */
+  .btn {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    padding: 0.75rem 2rem;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-transform: uppercase;
+    transition:
+      translate 120ms var(--ease-slam),
+      color 120ms linear;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: skewX(-12deg);
+    transition:
+      background-color 120ms linear,
+      box-shadow 120ms var(--ease-slam);
+  }
+
+  .btn:hover {
+    translate: 3px -3px;
+  }
+
+  .btn:active {
+    translate: 0 2px;
+  }
+
+  .btn-primary {
+    color: var(--color-night);
+  }
+
+  .btn-primary::before {
+    background: var(--color-neon-yellow);
+    box-shadow: 6px 6px 0 var(--color-neon-magenta);
+  }
+
+  .btn-primary:hover::before {
+    box-shadow: 9px 9px 0 var(--color-neon-magenta);
+  }
+
+  .btn-secondary {
+    color: var(--color-neon-yellow);
+  }
+
+  .btn-secondary::before {
+    border: 2px solid var(--color-neon-yellow);
+    background: rgb(7 6 13 / 0.7);
+  }
+
+  .btn-secondary:hover {
+    color: var(--color-night);
+  }
+
+  .btn-secondary:hover::before {
+    background: var(--color-neon-yellow);
+  }
+
+  /* The slanted edges only trim the padding, so the letters are never cut at rest. */
+  .word-mask {
+    position: relative;
+    display: inline-block;
+    margin: -0.05em -0.04em;
+    padding: 0.05em 0.04em;
+    clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+  }
+
   .glitch-layer {
     position: absolute;
     inset: 0;
@@ -82,6 +160,13 @@
       2px 0 rgb(0 240 255 / 0.75),
       -2px 0 rgb(255 31 143 / 0.75);
   }
+}
+
+/* Keeps small text crisp where the rain runs behind it. */
+@utility text-halo {
+  text-shadow:
+    0 0 6px var(--color-night),
+    0 0 14px var(--color-night);
 }
 
 /* Parallelogram shape shared by the logo tile, buttons and the nav indicator. */
