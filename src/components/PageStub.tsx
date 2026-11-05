@@ -7,7 +7,7 @@ export default function PageStub({ title }: { title: string }) {
   usePageTitle(title)
 
   return (
-    <section className="flex min-h-svh flex-col justify-center px-6 md:px-12">
+    <section className="flex flex-1 flex-col justify-center px-6 md:px-12">
       <h1 className="font-display text-7xl font-black uppercase md:text-9xl">
         <GlitchText text={title}>
           <ScrambleText text={title} />

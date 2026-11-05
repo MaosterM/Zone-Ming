@@ -1,0 +1,19 @@
+import { profile } from '../data/profile'
+
+export default function Footer() {
+  return (
+    <footer className="relative z-10 flex items-center justify-between gap-4 px-6 py-4 font-mono text-sm text-muted md:px-12">
+      <span>
+        &copy; {new Date().getFullYear()} {profile.name}
+      </span>
+      <a
+        href={profile.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex min-h-11 items-center text-ink underline decoration-neon-yellow underline-offset-4 transition-colors hover:text-neon-yellow"
+      >
+        LinkedIn
+      </a>
+    </footer>
+  )
+}
