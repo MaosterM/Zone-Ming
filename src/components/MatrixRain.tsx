@@ -122,8 +122,10 @@ function startRain(canvas: HTMLCanvasElement, reducedMotion: boolean) {
   }
 
   function onTick(time: number) {
-    if (time - lastFrame < FRAME_SECONDS) return
-    lastFrame = time
+    const elapsed = time - lastFrame
+    if (elapsed < FRAME_SECONDS) return
+    // Keeping the leftover time holds the average at 30fps on any refresh rate.
+    lastFrame = time - (elapsed % FRAME_SECONDS)
     drawFrame()
   }
 

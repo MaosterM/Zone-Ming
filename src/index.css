@@ -76,6 +76,26 @@
     mix-blend-mode: screen;
   }
 
+  /* Shaped on a pseudo-element, because clip-path on the link would cut off its focus ring. */
+  .logo-tile {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .logo-tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--color-neon-yellow);
+    transform: skewX(-12deg);
+    transition: background-color 120ms linear;
+  }
+
+  .logo-tile:hover::before {
+    background: var(--color-neon-cyan);
+  }
+
   /* The slanted shape sits on a pseudo-element, so the outline variant keeps its border. */
   .btn {
     position: relative;
@@ -332,7 +352,7 @@
     0 0 14px var(--color-night);
 }
 
-/* Parallelogram shape shared by the logo tile, buttons and the nav indicator. */
+/* Parallelogram shape for elements that take no keyboard focus, as it would clip the ring. */
 @utility clip-slant {
   --slant: 0.7rem;
   clip-path: polygon(var(--slant) 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
