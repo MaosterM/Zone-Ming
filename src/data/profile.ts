@@ -1,8 +1,8 @@
 /**
  * Every piece of personal content on the site lives in this file.
  *
- * Search for "TODO" to find what still needs filling in. Nothing here has been invented: each
- * value comes from your LinkedIn headline, your public GitHub repos, or is a marked TODO.
+ * Nothing here has been invented: each value comes from you, your LinkedIn headline or your
+ * public GitHub repos.
  */
 
 export type ProjectLink = {
