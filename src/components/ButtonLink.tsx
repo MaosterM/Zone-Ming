@@ -2,14 +2,27 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router'
 
 type Props = {
-  to: string
+  /** A page on this site. */
+  to?: string
+  /** An external address, which opens in a new tab. */
+  href?: string
   variant?: 'primary' | 'secondary'
   children: ReactNode
 }
 
-export default function ButtonLink({ to, variant = 'primary', children }: Props) {
+export default function ButtonLink({ to, href, variant = 'primary', children }: Props) {
+  const className = `btn btn-${variant}`
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className={className}>
+        {children}
+      </a>
+    )
+  }
+
   return (
-    <Link to={to} className={`btn btn-${variant}`}>
+    <Link to={to ?? '/'} className={className}>
       {children}
     </Link>
   )
