@@ -9,7 +9,7 @@ export default function StatStrip({ stats }: { stats: Stat[] }) {
         {stats.map((stat) => (
           <div key={stat.label} className="flex flex-col-reverse justify-end gap-2">
             <dt className="hud-label">{stat.label}</dt>
-            <dd className="font-display text-5xl leading-none font-black text-neon-yellow md:text-6xl">{stat.value}</dd>
+            <dd className="font-display text-4xl leading-none font-black text-neon-yellow md:text-6xl">{stat.value}</dd>
           </div>
         ))}
       </dl>
