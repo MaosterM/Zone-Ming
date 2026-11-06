@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FocusEvent, type PointerEvent } from 
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router'
 import Heading from '../components/Heading'
+import WorkSections from '../components/WorkSections'
 import { projects, type Project } from '../data/profile'
 import { assetUrl } from '../lib/assets'
 import { gsap, useGSAP, useHasFinePointer, usePrefersReducedMotion } from '../lib/motion'
@@ -112,7 +113,7 @@ export default function Work() {
   }
 
   return (
-    <div className="flex flex-1 flex-col pt-28 pb-16">
+    <div className="flex flex-1 flex-col pt-28">
       <div className="px-6 md:px-12">
         <Heading as="h1" text="Work" className="text-8xl leading-none md:text-[10rem]" />
       </div>
@@ -140,11 +141,23 @@ export default function Work() {
                 </h2>
                 <p className="work-row-meta text-base md:text-lg">{project.description}</p>
                 <span className="work-row-meta font-mono text-sm md:text-right md:text-base">{project.year}</span>
+                {/* Touch devices have no hover preview, so the image sits in the row. */}
+                {!finePointer && (
+                  <img
+                    src={assetUrl(project.image)}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="work-row-thumb aspect-video w-full object-cover object-top"
+                  />
+                )}
               </Link>
             </li>
           ))}
         </ul>
       )}
+
+      <WorkSections />
 
       {finePointer &&
         createPortal(
