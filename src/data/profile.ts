@@ -149,6 +149,7 @@ export const projects: Project[] = [
     gallery: [
       { image: 'projects/ejector-seat-timeline.jpg', alt: 'Five stages in order: team sells 5%, agent ejects in 185 to 213 milliseconds, an 8 second wait, team dumps the rest, liquidity removed.', caption: "Generated from the README's demo sequence" },
       { image: 'projects/ejector-seat-curve.jpg', alt: 'A curve of token amount against BNB in a pool, with one point before a sale and another after a big sale, far along the curve.', caption: 'Illustration of the pool formula, not measured data' },
+      { image: 'projects/ejector-seat-dashboard.jpg', alt: 'The Ejector Seat dashboard, marked offline, with buttons to reset the scenario, arm the guard and run the rug, an empty price chart, and panels comparing guarded and unguarded positions.', caption: 'Screenshot of the real dashboard with no agent connected, so it shows no data' },
     ],
   },
   {
@@ -254,7 +255,7 @@ export const projects: Project[] = [
     ],
     links: [{ label: 'See the code', url: 'https://github.com/MaosterM/financial-datascience-dashboard' }],
     image: 'projects/quant-terminal.jpg',
-    imageAlt: "Cover graphic with price lines drawn by the project's own seeded simulator, and the names of its five views.",
+    imageAlt: "Screenshot of Quant Terminal's Command view: an order book beside a market heatmap, with a ticker along the bottom, all on simulated data.",
     languages: ['TypeScript'],
     stats: [
       { label: 'Views', value: '5' },
@@ -280,8 +281,8 @@ export const projects: Project[] = [
       "The repo's description mentions Python and machine learning, but the code there today is a TypeScript front end.",
     ],
     gallery: [
-      { image: 'projects/quant-terminal-montecarlo.jpg', alt: 'A fan of 300 simulated price paths spreading out from a single start.', caption: "Redrawn from the project's formula, simulated data" },
-      { image: 'projects/quant-terminal-drawdown.jpg', alt: 'A chart of a simulated price series falling below its running peak.', caption: "Redrawn from the project's price function, simulated data" },
+      { image: 'projects/quant-terminal-risk.jpg', alt: 'The Risk view: a Monte Carlo fan of 300 paths with drift and volatility sliders and its outcomes, a wireframe volatility surface, and an underwater drawdown chart.', caption: 'Screenshot of the running app, on simulated data' },
+      { image: 'projects/quant-terminal-alpha.jpg', alt: 'The Alpha view: a forecast with a widening confidence band, an asset correlation matrix, and the settings and results of a backtest.', caption: 'Screenshot of the running app, on simulated data' },
     ],
   },
   {
@@ -293,23 +294,23 @@ export const projects: Project[] = [
     stack: ['PHP 8', 'MySQL', 'Vanilla JavaScript', 'CSS'],
     built: [
       'A hotel site in charcoal, ivory and champagne gold, with a fullscreen menu, a flex room carousel, slash-wipe page transitions and kinetic type, written in vanilla JavaScript with no framework.',
-      'Phase 1 is done: the database schema for rooms, guests and bookings, the PHP core, the design system, the motion engine and the Home page. The booking engine, reservation manager and AI concierge are in progress.',
+      'The database schema for rooms, guests and bookings, the PHP core, the design system, the motion engine and the Home, Rooms and Experiences pages all run. The booking flow, reservation manager and AI concierge are in progress.',
     ],
     links: [{ label: 'See the code', url: 'https://github.com/MaosterM/Maison-Aurelle' }],
     image: 'projects/maison-aurelle.jpg',
-    imageAlt: "Cover graphic using the project's hero image: soft window light in a dark room, with the title in the site's ivory and gold.",
+    imageAlt: "Screenshot of Maison Aurelle's Home page: the headline Where stillness becomes an art form over soft window light, above a date and guest search bar.",
     languages: ['PHP', 'JavaScript'],
     stats: [
       { label: 'Database tables', value: '8' },
       { label: 'Room types', value: '6' },
       { label: 'Frameworks', value: '0' },
-      { label: 'Status', value: 'Phase 1' },
+      { label: 'Status', value: 'In progress' },
     ],
     steps: [
       { title: 'Database', text: 'Schema and seed data for rooms, add-ons, guests, bookings, booking events, inquiries and rate limits.' },
       { title: 'PHP core', text: 'PHP 8 with PDO and prepared statements, for MySQL 8 or MariaDB.' },
       { title: 'Motion engine', text: 'Slash-wipe page transitions, a fullscreen menu and a flex room carousel in vanilla ES modules.' },
-      { title: 'Home page', text: 'The first complete page in charcoal, ivory and champagne gold, and the base for the rest.' },
+      { title: 'Pages', text: 'Home, Rooms and Experiences read from the seeded database, all in charcoal, ivory and champagne gold.' },
     ],
     notes: [
       { title: 'Transitions without a framework', text: 'The wipe runs on a normal multi-page PHP site. A page arriving through a wipe starts covered, then reveals in the same direction, and it respects reduced motion.' },
@@ -318,14 +319,13 @@ export const projects: Project[] = [
       { title: 'A complete atmosphere', text: 'The site ships its own atmospheric images for each room type and for the spa and gym, all in one muted palette.' },
     ],
     limits: [
-      'In progress. The README lists Phase 1 as done, with the booking engine, other pages and AI concierge still to come.',
-      "The images here are the project's own assets, not screenshots of the running site.",
+      'In progress. The booking flow, reservation manager and AI concierge are not finished.',
+      'Rooms, prices and treatments are sample data for a fictional hotel.',
     ],
     gallery: [
-      { image: 'projects/maison-aurelle-presidential-suite.jpg', alt: 'Soft light through two tall windows above a dark, low bed.', caption: 'Project asset: Presidential Suite', portrait: true },
-      { image: 'projects/maison-aurelle-garden-villa.jpg', alt: "The project's dark, softly lit artwork for its Garden Villa.", caption: 'Project asset: Garden Villa', portrait: true },
-      { image: 'projects/maison-aurelle-spa.jpg', alt: 'A silhouette of stacked stones in slanted light.', caption: 'Project asset: Spa', portrait: true },
-      { image: 'projects/maison-aurelle-gym.jpg', alt: "The project's dark, softly lit artwork for its gym.", caption: 'Project asset: Gym', portrait: true },
+      { image: 'projects/maison-aurelle-rooms.jpg', alt: 'The Rooms page: the headline Rooms and suites, filter tabs, and a panel for the Deluxe Room with its details and a reserve button.', caption: 'Screenshot of the running site, with sample data' },
+      { image: 'projects/maison-aurelle-menu.jpg', alt: 'The fullscreen menu: large serif page names, with a slanted gold highlight on the first item.', caption: 'Screenshot of the running site' },
+      { image: 'projects/maison-aurelle-experiences.jpg', alt: 'The Experiences page: artwork of stacked stones beside a list of spa treatments with prices and add buttons.', caption: 'Screenshot of the running site, with sample data' },
     ],
   },
 ]
