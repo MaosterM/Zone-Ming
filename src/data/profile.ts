@@ -319,7 +319,7 @@ export const projects: Project[] = [
     ],
     limits: [
       'In progress. The README lists Phase 1 as done, with the booking engine, other pages and AI concierge still to come.',
-      "I couldn't run it for this page, so the images are the project's own assets rather than screenshots.",
+      "The images here are the project's own assets, not screenshots of the running site.",
     ],
     gallery: [
       { image: 'projects/maison-aurelle-presidential-suite.jpg', alt: 'Soft light through two tall windows above a dark, low bed.', caption: 'Project asset: Presidential Suite', portrait: true },
