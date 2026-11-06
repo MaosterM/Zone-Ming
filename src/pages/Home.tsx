@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import ButtonLink from '../components/ButtonLink'
 import GlitchText, { type GlitchHandle } from '../components/GlitchText'
+import HomeSections from '../components/HomeSections'
 import ScrambleText from '../components/ScrambleText'
 import { profile } from '../data/profile'
 import { gsap, useGSAP, usePrefersReducedMotion } from '../lib/motion'
@@ -62,7 +63,8 @@ export default function Home() {
   )
 
   return (
-    <section ref={root} className="flex flex-1 flex-col justify-end gap-6 overflow-x-clip px-6 pt-24 pb-2 md:gap-8 md:px-12">
+    <>
+      <section ref={root} className="flex min-h-svh flex-col justify-end gap-6 overflow-x-clip px-6 pt-24 pb-8 md:gap-8 md:px-12">
       <h1
         data-name
         className="font-display text-[min(30vw,42svh)] leading-[0.84] font-black tracking-tight uppercase"
@@ -110,6 +112,8 @@ export default function Home() {
           </ButtonLink>
         </div>
       </div>
-    </section>
+      </section>
+      <HomeSections />
+    </>
   )
 }
