@@ -46,8 +46,9 @@ All personal content lives in one file: [`src/data/profile.ts`](src/data/profile
 | Role, bio, status, email and links | `profile` |
 | Skills | `skills` |
 | Projects | `projects` |
+| Focus areas and the build log | `focusAreas` and `buildLog` |
 
-**To add a project,** copy an entry in `projects`, give it a unique `slug`, and put its image in `public/projects/`. The Work list, project page, previous and next links, and transition label all update from that entry.
+**To add a project,** copy an entry in `projects`, give it a unique `slug`, and put its images in `public/projects/`. The Work list, project page, previous and next links, and transition label all update from that entry. Each project page shows its `stats`, `steps`, `notes`, `gallery` and `limits`, so keep figures to what the project's own README or code supports.
 
 **To replace a cover graphic with a real screenshot,** save it over the file in `public/projects/` and update `imageAlt` to describe what it shows. Images look best at 16:9, with the important part towards the top.
 
