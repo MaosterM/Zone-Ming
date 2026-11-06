@@ -209,6 +209,11 @@
     grid-area: year;
   }
 
+  .work-row-thumb {
+    grid-column: 2 / -1;
+    margin-top: 0.5rem;
+  }
+
   .work-row-meta {
     color: var(--color-muted);
     text-shadow:
