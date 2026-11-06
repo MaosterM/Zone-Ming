@@ -276,6 +276,51 @@
     }
   }
 
+  /* HUD panel with two chamfered corners. The pseudo-element leaves a 1px border that follows them. */
+  .hud-panel {
+    --cut: 16px;
+    position: relative;
+    isolation: isolate;
+    background: var(--color-line);
+    clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+    transition: background-color 150ms linear;
+  }
+
+  .hud-panel::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    z-index: -1;
+    background: var(--color-night-raised);
+    clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+  }
+
+  a.hud-panel:hover {
+    background: var(--color-neon-yellow);
+  }
+
+  a.hud-panel:focus-visible {
+    outline-offset: -5px;
+  }
+
+  .hud-label {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-neon-cyan);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow:
+      0 0 6px var(--color-night),
+      0 0 14px var(--color-night);
+  }
+
+  .circuit-grid {
+    background-image:
+      linear-gradient(rgb(0 240 255 / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(0 240 255 / 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
   .field {
     display: flex;
     flex-direction: column;
