@@ -52,16 +52,22 @@ export default function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="field">
           <span>Name</span>
-          <input name="name" type="text" autoComplete="name" required />
+          <span className="field-prompt">
+            <input name="name" type="text" autoComplete="name" required />
+          </span>
         </label>
         <label className="field">
           <span>Email</span>
-          <input name="email" type="email" autoComplete="email" required />
+          <span className="field-prompt">
+            <input name="email" type="email" autoComplete="email" required />
+          </span>
         </label>
       </div>
       <label className="field">
         <span>Message</span>
-        <textarea name="message" rows={5} required />
+        <span className="field-prompt">
+          <textarea name="message" rows={5} required />
+        </span>
       </label>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
         <button type="submit" disabled={status === 'sending'} className="btn btn-primary">
