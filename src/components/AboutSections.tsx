@@ -51,7 +51,7 @@ export default function AboutSections() {
     <>
       <div className="flex flex-col gap-24 pt-24 pb-24 md:gap-36 md:pt-36 md:pb-36">
         <section>
-          <SectionHeader label="01 / Education" title="Studying" />
+          <SectionHeader label="01 / Studies" title="Education" />
           <StatStrip
             stats={[
               { label: "Bachelor's degree", value: 'Computer Science' },

@@ -335,13 +335,29 @@
     color: var(--color-neon-cyan);
   }
 
+  /* A terminal prompt inside each input. */
+  .field-prompt {
+    position: relative;
+    display: block;
+  }
+
+  .field-prompt::before {
+    content: '>';
+    position: absolute;
+    top: 0.75rem;
+    left: 0.875rem;
+    color: var(--color-neon-yellow);
+    pointer-events: none;
+  }
+
   .field input,
   .field textarea {
+    display: block;
     width: 100%;
     min-height: 3rem;
     border: 2px solid var(--color-muted);
     background: var(--color-night-raised);
-    padding: 0.625rem 0.875rem;
+    padding: 0.625rem 0.875rem 0.625rem 2.25rem;
     font-family: var(--font-body);
     font-size: 1rem;
     color: var(--color-ink);
