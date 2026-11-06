@@ -1,3 +1,4 @@
+import AboutSections from '../components/AboutSections'
 import ButtonLink from '../components/ButtonLink'
 import Heading from '../components/Heading'
 import StatusPanel from '../components/StatusPanel'
@@ -8,7 +9,7 @@ export default function About() {
   usePageTitle('About')
 
   return (
-    <div className="flex flex-1 flex-col gap-16 px-6 pt-28 pb-16 md:px-12">
+    <div className="flex flex-1 flex-col px-6 pt-28 md:px-12">
       <section className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-16">
         <div>
           <Heading as="h1" text="About" className="text-8xl leading-none md:text-[10rem]" />
@@ -30,7 +31,7 @@ export default function About() {
         </section>
       </section>
 
-      <section aria-labelledby="skills-heading">
+      <section aria-labelledby="skills-heading" className="mt-16">
         <h2 id="skills-heading" className="sr-only">
           Skills
         </h2>
@@ -47,6 +48,8 @@ export default function About() {
           ))}
         </div>
       </section>
+
+      <AboutSections />
     </div>
   )
 }
