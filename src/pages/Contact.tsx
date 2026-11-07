@@ -1,9 +1,9 @@
 import { Link } from 'react-router'
-import ArtBanner from '../components/ArtBanner'
 import ContactForm from '../components/ContactForm'
 import GlitchText from '../components/GlitchText'
 import Heading from '../components/Heading'
 import Reveal from '../components/Reveal'
+import SectionBreak from '../components/SectionBreak'
 import SectionHeader from '../components/SectionHeader'
 import StatStrip from '../components/StatStrip'
 import { profile, projects } from '../data/profile'
@@ -79,7 +79,7 @@ export default function Contact() {
         </section>
       </div>
 
-      <ArtBanner image="art/city.jpg" />
+      <SectionBreak />
 
       <section className="px-6 py-24 md:px-12 md:py-36">
         <SectionHeader label="03 / Before you write" title="See my recent work" />

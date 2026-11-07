@@ -1,11 +1,11 @@
 import { Link } from 'react-router'
 import { buildLog, projects } from '../data/profile'
 import { assetUrl } from '../lib/assets'
-import ArtBanner from './ArtBanner'
 import ButtonLink from './ButtonLink'
 import FocusAreas from './FocusAreas'
 import Heading from './Heading'
 import Reveal from './Reveal'
+import SectionBreak from './SectionBreak'
 import SectionHeader from './SectionHeader'
 import StatStrip from './StatStrip'
 import TerminalLog from './TerminalLog'
@@ -73,7 +73,7 @@ export default function HomeSections() {
         </section>
       </div>
 
-      <ArtBanner image="art/shards.jpg" />
+      <SectionBreak />
 
       <div className="flex flex-col gap-24 px-6 py-24 md:gap-36 md:px-12 md:py-36">
         <section>
@@ -108,7 +108,7 @@ export default function HomeSections() {
         </section>
       </div>
 
-      <ArtBanner image="art/city.jpg" />
+      <SectionBreak flip />
 
       <section className="flex flex-col items-start gap-8 px-6 py-24 md:px-12 md:py-36">
         <Reveal>

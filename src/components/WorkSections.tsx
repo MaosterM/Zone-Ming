@@ -1,8 +1,8 @@
 import { Link } from 'react-router'
 import { profile, projects, type Language } from '../data/profile'
-import ArtBanner from './ArtBanner'
 import ButtonLink from './ButtonLink'
 import Reveal from './Reveal'
+import SectionBreak from './SectionBreak'
 import SectionHeader from './SectionHeader'
 import StatStrip from './StatStrip'
 
@@ -73,7 +73,7 @@ export default function WorkSections() {
         </section>
       </div>
 
-      <ArtBanner image="art/circuit.jpg" />
+      <SectionBreak />
 
       <section className="flex flex-col items-start gap-6 px-6 py-24 md:px-12 md:py-36">
         <SectionHeader label="02 / Source" title="Read the code" intro="Every project here links to its public repository, including its README and what is still unfinished." />
