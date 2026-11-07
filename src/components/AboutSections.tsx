@@ -1,9 +1,9 @@
 import { profile } from '../data/profile'
-import ArtBanner from './ArtBanner'
 import ButtonLink from './ButtonLink'
 import FocusAreas from './FocusAreas'
 import NoteGrid from './NoteGrid'
 import Reveal from './Reveal'
+import SectionBreak from './SectionBreak'
 import SectionHeader from './SectionHeader'
 import StatStrip from './StatStrip'
 
@@ -75,7 +75,7 @@ export default function AboutSections() {
       </div>
 
       <div className="-mx-6 md:-mx-12">
-        <ArtBanner image="art/circuit.jpg" />
+        <SectionBreak />
       </div>
 
       <div className="flex flex-col gap-10 py-24 md:py-36">
